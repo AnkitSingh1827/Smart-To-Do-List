@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A modern, production-ready To-Do List app with dark mode, filters, and local storage support." />
+  <title>TaskFlow — Smart To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ───────────── BACKGROUND BLOBS ───────────── -->
+  <div class="bg-blob blob-1" aria-hidden="true"></div>
+  <div class="bg-blob blob-2" aria-hidden="true"></div>
+
+  <!-- ───────────── APP WRAPPER ───────────── -->
+  <div class="app-wrapper">
+
+    <!-- HEADER -->
+    <header class="app-header">
+      <div class="logo">
+        <span class="logo-icon" aria-hidden="true">✦</span>
+        <h1>TaskFlow</h1>
+      </div>
+
+      <button
+        id="theme-toggle"
+        class="btn-icon"
+        aria-label="Toggle dark/light mode"
+        title="Toggle theme"
+      >
+        <span class="icon-sun" aria-hidden="true">☀️</span>
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+      </button>
+    </header>
+
+    <!-- HERO / STATS -->
+    <section class="hero" aria-label="Task summary">
+      <div class="stat-card" id="stat-total">
+        <span class="stat-number" id="count-total">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+      <div class="stat-card" id="stat-pending">
+        <span class="stat-number" id="count-pending">0</span>
+        <span class="stat-label">Pending</span>
+      </div>
+      <div class="stat-card" id="stat-done">
+        <span class="stat-number" id="count-done">0</span>
+        <span class="stat-label">Completed</span>
+      </div>
+    </section>
+
+    <!-- INPUT AREA -->
+    <section class="input-section" aria-label="Add new task">
+      <form id="task-form" class="task-form" novalidate>
+        <input
+          type="text"
+          id="task-input"
+          class="task-input"
+          placeholder="What needs to be done?"
+          aria-label="New task description"
+          maxlength="200"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="add-btn" class="btn-primary" aria-label="Add task">
+          <span class="btn-icon-inner" aria-hidden="true">+</span>
+          <span>Add Task</span>
+        </button>
+      </form>
+      <p class="char-count" id="char-count" aria-live="polite"></p>
+    </section>
+
+    <!-- FILTER BAR -->
+    <nav class="filter-bar" aria-label="Filter tasks">
+      <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+      <button class="filter-btn" data-filter="pending" id="filter-pending">Pending</button>
+      <button class="filter-btn" data-filter="completed" id="filter-completed">Completed</button>
+      <button class="btn-danger-sm" id="clear-completed-btn" aria-label="Clear completed tasks">
+        Clear Completed
+      </button>
+    </nav>
+
+    <!-- TASK LIST -->
+    <main>
+      <ul class="task-list" id="task-list" aria-label="Task list" aria-live="polite">
+        <!-- Tasks are injected by JS -->
+      </ul>
+
+      <!-- EMPTY STATE -->
+      <div class="empty-state" id="empty-state" hidden>
+        <div class="empty-icon" aria-hidden="true">🗒️</div>
+        <p class="empty-title">Nothing here yet!</p>
+        <p class="empty-sub">Add your first task above and get things done.</p>
+      </div>
+    </main>
+
+  </div><!-- /.app-wrapper -->
+
+  <!-- EDIT MODAL -->
+  <div class="modal-backdrop" id="modal-backdrop" hidden aria-modal="true" role="dialog" aria-labelledby="modal-heading">
+    <div class="modal">
+      <h2 class="modal-heading" id="modal-heading">Edit Task</h2>
+      <textarea
+        id="edit-input"
+        class="edit-textarea"
+        maxlength="200"
+        aria-label="Edit task text"
+      ></textarea>
+      <div class="modal-actions">
+        <button class="btn-secondary" id="modal-cancel">Cancel</button>
+        <button class="btn-primary" id="modal-save">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast" role="status" aria-live="assertive"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
