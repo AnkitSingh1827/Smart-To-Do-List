@@ -77,8 +77,3 @@ Troubleshooting:
 - If the server command errors, ensure Python or Node.js is installed and the terminal's current directory is the project folder.
 - Use `start http://localhost:8000` (PowerShell) to automatically open the browser.
 ---
-
-## 🌐 How to Deploy to Vercel
-
-This project includes a `vercel.json` file, which makes it incredibly easy to deploy to Vercel. The configuration automatically routes visitors to the `public/index.html` file.
-
