@@ -24,7 +24,6 @@ task3/
 │   ├── index.html          # Main HTML structure
 │   ├── style.css           # Styling, themes, and animations
 │   └── script.js           # Core logic and local storage management
-├── vercel.json             # Configuration file for Vercel deployment
 └── README.md               # This documentation file
 ```
 
@@ -36,44 +35,50 @@ task3/
 
 ---
 
-## 💻 How to Run Locally
+## 💻 How to Run Locally (quick)
 
-You do not need any complex backend to run this application! Here are a few simple ways to get it running on your computer:
+This is a static, frontend-only app. Pick one simple option below and run the shown commands in your terminal.
 
-### Option 1: Using a Local Development Server (Recommended)
-Running a local server ensures that all assets load exactly as they would on a real website. 
+Option A — Recommended (quick HTTP server using Python 3):
 
-1. Ensure you have [Node.js](https://nodejs.org/) installed on your computer.
-2. Open your terminal and navigate to the project folder (`task3`).
-3. Run the following command:
-   ```bash
-   npx serve public
-   ```
-4. Open your web browser and go to the link provided in the terminal (usually `http://localhost:3000`).
+1. Open PowerShell or any terminal and run:
 
-### Option 2: The Quick Way (Direct Browser Opening)
-Because this is a pure frontend app, you can simply open the HTML file directly in your web browser.
+```powershell
+cd public
+python -m http.server 8000
+# then open http://localhost:8000 in your browser
+```
 
-1. Open your File Explorer.
-2. Navigate inside the `task3/public` folder.
-3. Double-click the `index.html` file.
-   *(Alternatively, right-click `index.html` -> Open With -> Google Chrome / Edge / Safari).*
+If `python` isn't available on Windows, try:
 
-### Option 3: Using VS Code Live Server
-If you use Visual Studio Code as your code editor:
-1. Install the **Live Server** extension.
-2. Open `public/index.html` in VS Code.
-3. Click the "Go Live" button at the bottom right corner of the VS Code window.
+```powershell
+py -3 -m http.server 8000
+```
 
+Option B — Node.js (one-liner):
+
+```powershell
+npx serve public
+# open the URL shown by the command (usually http://localhost:3000)
+```
+
+Option C — Quick file open (no server):
+
+Open the folder and double-click `index.html` (works for basic usage but some browser features prefer a local server).
+
+Option D — VS Code Live Server:
+
+1. Install the "Live Server" extension in VS Code.
+2. Open `public/index.html` and click "Go Live".
+
+Troubleshooting:
+
+- If pages look blank, make sure you opened `public/index.html` (not a parent folder file).
+- If the server command errors, ensure Python or Node.js is installed and the terminal's current directory is the project folder.
+- Use `start http://localhost:8000` (PowerShell) to automatically open the browser.
 ---
 
 ## 🌐 How to Deploy to Vercel
 
 This project includes a `vercel.json` file, which makes it incredibly easy to deploy to Vercel. The configuration automatically routes visitors to the `public/index.html` file.
 
-1. Push this project folder to a GitHub repository.
-2. Go to [Vercel.com](https://vercel.com/) and sign in.
-3. Click **Add New** -> **Project**.
-4. Import your GitHub repository.
-5. Leave all settings as default and click **Deploy**.
-6. Within seconds, your app will be live on the internet!
