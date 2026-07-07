@@ -71,6 +71,12 @@ Option D — VS Code Live Server:
 1. Install the "Live Server" extension in VS Code.
 2. Open `public/index.html` and click "Go Live".
 
+
+   - - ## 👩‍💻 Author
+
+*Ankit Singh*  
+[GitHub](https://github.com/AnkitSingh1827) | [LinkedIn](https://www.linkedin.com/in/ankit-singh257)
+
 Troubleshooting:
 
 - If pages look blank, make sure you opened `public/index.html` (not a parent folder file).
