@@ -101,7 +101,6 @@ You can also double-click `public/index.html`, but using a local server is recom
 1. Install the "Live Server" extension in VS Code.
 2. Open `public/index.html` and click "Go Live".
 
-<<<<<<< HEAD
 
    - - ## 👩‍💻 Author
 
@@ -109,21 +108,5 @@ You can also double-click `public/index.html`, but using a local server is recom
 [GitHub](https://github.com/AnkitSingh1827) | [LinkedIn](https://www.linkedin.com/in/ankit-singh257)
 
 Troubleshooting:
-=======
-### Troubleshooting
-
-- Press `Ctrl + C` in the terminal to stop the server.
-- Make sure you are serving the `public` folder, not the project root.
-- If the server command errors, ensure Python is installed.
-- In PowerShell, you can open the app with:
-
-```powershell
-Start-Process http://127.0.0.1:8000/
-```
->>>>>>> 68976b2 (Updated Smart To Do List features)
 
 ---
-<<<<<<< HEAD
-=======
-
->>>>>>> 68976b2 (Updated Smart To Do List features)
