@@ -101,7 +101,6 @@ You can also double-click `public/index.html`, but using a local server is recom
 1. Install the "Live Server" extension in VS Code.
 2. Open `public/index.html` and click "Go Live".
 
-
    - - ## 👩‍💻 Author
 
 *Ankit Singh*  
