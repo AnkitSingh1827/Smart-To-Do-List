@@ -37,40 +37,71 @@ task3/
 
 ## 💻 How to Run Locally (quick)
 
-This is a static, frontend-only app. Pick one simple option below and run the shown commands in your terminal.
+This is a static, frontend-only app. The easiest way to run it is to serve the files from the `public` folder using Python.
 
-Option A — Recommended (quick HTTP server using Python 3):
+### Copy/paste terminal commands
 
-1. Open PowerShell or any terminal and run:
+If you are already inside the project folder, run:
 
 ```powershell
 cd public
-python -m http.server 8000
-# then open http://localhost:8000 in your browser
-```
-
-If `python` isn't available on Windows, try:
-
-```powershell
 py -3 -m http.server 8000
 ```
 
-Option B — Node.js (one-liner):
+If you are in the parent workspace folder, run:
 
 ```powershell
-npx serve public
-# open the URL shown by the command (usually http://localhost:3000)
+cd task3/public
+py -3 -m http.server 8000
 ```
 
-Option C — Quick file open (no server):
+Then open:
 
-Open the folder and double-click `index.html` (works for basic usage but some browser features prefer a local server).
+```text
+http://127.0.0.1:8000/
+```
 
-Option D — VS Code Live Server:
+### Option A — Run from the terminal (recommended)
+
+1. Open PowerShell in the project folder.
+2. Run:
+
+```powershell
+cd public
+py -3 -m http.server 8000
+```
+
+3. Open this address in your browser:
+
+```text
+http://127.0.0.1:8000/
+```
+
+If `py` is not available on your machine, try:
+
+```powershell
+python -m http.server 8000
+```
+
+### Option B — Run from the workspace root
+
+If you are in the parent folder of this project, use:
+
+```powershell
+cd task3/public
+py -3 -m http.server 8000
+```
+
+### Option C — Open directly
+
+You can also double-click `public/index.html`, but using a local server is recommended for the best experience.
+
+### Option D — VS Code Live Server
 
 1. Install the "Live Server" extension in VS Code.
 2. Open `public/index.html` and click "Go Live".
 
+<<<<<<< HEAD
 
    - - ## 👩‍💻 Author
 
@@ -78,8 +109,21 @@ Option D — VS Code Live Server:
 [GitHub](https://github.com/AnkitSingh1827) | [LinkedIn](https://www.linkedin.com/in/ankit-singh257)
 
 Troubleshooting:
+=======
+### Troubleshooting
 
-- If pages look blank, make sure you opened `public/index.html` (not a parent folder file).
-- If the server command errors, ensure Python or Node.js is installed and the terminal's current directory is the project folder.
-- Use `start http://localhost:8000` (PowerShell) to automatically open the browser.
+- Press `Ctrl + C` in the terminal to stop the server.
+- Make sure you are serving the `public` folder, not the project root.
+- If the server command errors, ensure Python is installed.
+- In PowerShell, you can open the app with:
+
+```powershell
+Start-Process http://127.0.0.1:8000/
+```
+>>>>>>> 68976b2 (Updated Smart To Do List features)
+
 ---
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68976b2 (Updated Smart To Do List features)
